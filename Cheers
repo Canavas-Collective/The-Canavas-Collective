@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Canvas Collective QR</title>
+  <style>
+    body{
+      margin:0;
+      height:100vh;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      background:#fff;
+      font-family:Arial, sans-serif;
+      color:#111;
+    }
+    h1{margin-bottom:20px;font-size:24px;letter-spacing:-0.3px}
+    #qrCanvas{width:300px;height:300px}
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/qrious@4.0.2/dist/qrious.min.js"></script>
+</head>
+<body>
+  <h1>Canvas Collective</h1>
+  <canvas id="qrCanvas" width="300" height="300" role="img" aria-label="Canvas Collective QR code"></canvas>
+
+  <script>
+    // Set the destination URL for your QR code here:
+    const url = "https://canvascollective.org";
+    new QRious({
+      element: document.getElementById('qrCanvas'),
+      size: 300,
+      value: url,
+      level: 'H',
+      background: 'white',
+      foreground: 'black'
+    });
+  </script>
+</body>
+</html>
